@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "request_timeout_seconds": 12,
+  "max_retries": 1,
+  "statuses": ["AVAILABLE", "KEY_MISSING", "AUTH_FAILED", "RATE_LIMITED", "NETWORK_ERROR", "STALE", "DEGRADED", "TERMS_BLOCKED", "DISABLED"],
+  "overall_degraded_statuses": ["KEY_MISSING", "RATE_LIMITED", "NETWORK_ERROR", "STALE", "DEGRADED", "TERMS_BLOCKED", "DISABLED"],
+  "overall_failure_statuses": ["AUTH_FAILED"],
+  "secret_output_policy": "status_only",
+  "single_provider_failure_is_fatal": false
+}

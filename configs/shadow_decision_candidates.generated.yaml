@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-07-13T01:22:10+00:00",
+  "policy": "shadow_only_no_live_orders",
+  "baseline_required": [
+    "baseline_nfi",
+    "sizing_only",
+    "decision_engine_v2_relaxed"
+  ],
+  "new_candidates": []
+}

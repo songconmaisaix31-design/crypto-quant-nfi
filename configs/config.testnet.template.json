@@ -1,0 +1,38 @@
+{
+  "template_name": "testnet_observation_template",
+  "template_warning": "Template only. Do not copy into runtime without manual review. No real API keys are included.",
+  "dry_run": true,
+  "trading_mode": "spot",
+  "margin_mode": "",
+  "can_short": false,
+  "exchange": {
+    "name": "binance",
+    "key": "",
+    "secret": "",
+    "password": "",
+    "ccxt_config": {
+      "enableRateLimit": true
+    },
+    "ccxt_async_config": {
+      "enableRateLimit": true
+    },
+    "pair_whitelist": [
+      "BTC/USDT",
+      "ETH/USDT",
+      "SOL/USDT",
+      "XRP/USDT",
+      "ADA/USDT"
+    ],
+    "pair_blacklist": []
+  },
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "127.0.0.1",
+    "listen_port": 8080
+  },
+  "safety_notes": [
+    "This template intentionally keeps dry_run=true.",
+    "Do not add real API keys.",
+    "Do not enable futures, margin, leverage, or shorting."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "weights": {
+    "normalized_profit_after_slippage": 0.20,
+    "drawdown_improvement": 0.20,
+    "profit_factor_score": 0.15,
+    "net_filter_value_score": 0.15,
+    "max_consecutive_loss_score": 0.10,
+    "regime_stability_score": 0.10,
+    "sample_size_score": 0.05,
+    "operational_simplicity_score": 0.05
+  },
+  "penalties": {
+    "overfit_penalty": 0.30,
+    "leakage_penalty": 0.50,
+    "missed_winner_penalty": 0.20,
+    "low_sample_penalty": 0.15
+  },
+  "promotion_thresholds": {
+    "promote_to_shadow_score": 0.65,
+    "min_net_filter_value": 0.0,
+    "overfit_risk_must_not_equal": "HIGH"
+  },
+  "policy": {
+    "score_does_not_allow_live": true,
+    "max_promotion": "promote_to_shadow",
+    "gatekeeper_required": true
+  }
+}

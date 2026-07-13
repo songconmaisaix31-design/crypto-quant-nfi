@@ -1,0 +1,24 @@
+version: 2
+decision_model: risk_score_plus_opportunity_score
+threshold_grid:
+  allow_full_threshold: [65, 70, 75]
+  allow_half_threshold: [50, 55, 60]
+  allow_quarter_threshold: [35, 40, 45]
+  pair_quality_min_hard_block: [20, 25, 30, 35]
+  volume_zscore_block_threshold: [3, 4, 5, 6]
+  risk_score_weight: [0.8, 1.0, 1.2]
+  opportunity_score_weight: [0.8, 1.0, 1.2]
+atr_block_quantiles: [0.90, 0.95, 0.98]
+hard_blocks:
+  pair_quality_min_default: 25
+  panic_btc_crash_breadth_bad: true
+  extreme_atr_and_volume_and_return: true
+  negative_tag_score_min_samples: 5
+  negative_tag_score_threshold_abs: -2.0
+slippage:
+  stress_per_side: 0.0005
+train_test:
+  preferred_train_start: "2025-07-04"
+  preferred_train_end: "2026-01-05"
+  preferred_test_start: "2026-01-05"
+  preferred_test_end: "2026-07-04"

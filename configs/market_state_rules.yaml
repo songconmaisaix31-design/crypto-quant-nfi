@@ -1,0 +1,28 @@
+version: 1
+score_formula:
+  with_fear_greed:
+    fear_greed_score: 0.20
+    btc_trend_score: 0.25
+    market_breadth_score: 0.20
+    volume_score: 0.15
+    volatility_score: 0.10
+    pair_relative_strength_score: 0.10
+  local_only:
+    btc_trend_score: 0.30
+    market_breadth_score: 0.25
+    volume_score: 0.20
+    volatility_score: 0.15
+    pair_relative_strength_score: 0.10
+regime_thresholds:
+  panic_score_max: 25
+  fear_score_max: 40
+  greed_score_min: 65
+  overheated_score_min: 80
+  high_volatility_atr_percent: 6
+  trend_up_btc_above_ema50: true
+  trend_down_btc_above_ema50: false
+pair_quality:
+  min_score: 0
+  max_score: 100
+  volume_zscore_extreme: 3.0
+  atr_extreme_percent: 10.0

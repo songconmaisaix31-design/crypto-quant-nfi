@@ -1,0 +1,28 @@
+version: 1
+mode: shadow_only
+description: >
+  Candidate definitions for dry-run shadow observation. These rules never
+  control Freqtrade orders and never enable live trading.
+candidates:
+  baseline_nfi:
+    type: baseline
+    decision: allow_full
+    stake_multiplier: 1.0
+    notes: Original NFI dry-run behavior without shadow filtering.
+  decision_engine_v2_frozen:
+    type: frozen_v2
+    source: reports/decision_engine_v2/decision_engine_v2_summary.json
+    notes: Current calibrated v2 best parameters, frozen for observation.
+  decision_engine_v2_relaxed:
+    type: relaxed_v2
+    pair_quality_hard_block_below: 20
+    pair_quality_reduce_below: 40
+    convert_extreme_volume_block_to_reduce: true
+    convert_extreme_atr_block_to_reduce: true
+    keep_risk_off_bad_enter_tag_block: true
+    notes: Relax v2 false-kill-heavy rules while retaining historically useful blocks.
+  sizing_only:
+    type: sizing_only
+    hard_block_pair_quality_below: 20
+    hard_block_extreme_panic: true
+    notes: Avoids most blocks and mainly adjusts stake by market state and pair quality.

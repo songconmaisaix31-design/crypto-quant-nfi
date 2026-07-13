@@ -1,0 +1,23 @@
+version: 1
+block_rules:
+  overheated_pair_quality_below: 80
+  panic_requires_reversal_evidence: true
+  risk_off_blocks_bad_enter_tags: true
+  pair_quality_hard_min: 40
+  volume_zscore_extreme: 3.0
+  pair_atr_extreme_percent: 10.0
+  negative_tag_score_min_samples: 5
+stake_rules:
+  sentiment_below_35: 0.50
+  sentiment_above_70: 0.50
+  pair_quality_40_to_60: 0.50
+  high_volatility: 0.50
+  panic_or_extreme_risk: 0.25
+slippage:
+  stress_per_side: 0.0005
+allow_rules:
+  sentiment_min: 35
+  sentiment_max: 65
+  pair_quality_min: 60
+  require_btc_not_crashing: true
+  require_tag_score_non_negative: true
