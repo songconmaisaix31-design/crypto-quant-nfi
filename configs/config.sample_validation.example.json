@@ -1,0 +1,126 @@
+{
+  "$schema": "https://schema.freqtrade.io/schema.json",
+  "bot_name": "crypto_quant_nfi_native_dry_run",
+  "initial_state": "running",
+  "max_open_trades": 6,
+  "stake_currency": "USDT",
+  "stake_amount": 100,
+  "tradable_balance_ratio": 0.99,
+  "fiat_display_currency": "USD",
+  "dry_run": true,
+  "dry_run_wallet": 10000,
+  "cancel_open_orders_on_exit": false,
+  "trading_mode": "spot",
+  "margin_mode": "",
+  "timeframe": "5m",
+  "strategy": "NostalgiaForInfinityX7",
+  "can_short": false,
+  "use_exit_signal": true,
+  "exit_profit_only": false,
+  "ignore_roi_if_entry_signal": true,
+  "unfilledtimeout": {
+    "entry": 10,
+    "exit": 10,
+    "exit_timeout_count": 0,
+    "unit": "minutes"
+  },
+  "entry_pricing": {
+    "price_side": "same",
+    "use_order_book": true,
+    "order_book_top": 1,
+    "price_last_balance": 0.0,
+    "check_depth_of_market": {
+      "enabled": false,
+      "bids_to_ask_delta": 1
+    }
+  },
+  "exit_pricing": {
+    "price_side": "same",
+    "use_order_book": true,
+    "order_book_top": 1
+  },
+  "exchange": {
+    "name": "binance",
+    "key": "",
+    "secret": "",
+    "ccxt_config": {
+      "enableRateLimit": true,
+      "timeout": 60000,
+      "httpsProxy": "http://127.0.0.1:7890",
+      "options": {
+        "defaultType": "spot",
+        "fetchMarkets": {
+          "types": [
+            "spot"
+          ]
+        }
+      }
+    },
+    "ccxt_async_config": {
+      "enableRateLimit": true,
+      "timeout": 60000,
+      "httpsProxy": "http://127.0.0.1:7890",
+      "options": {
+        "defaultType": "spot",
+        "fetchMarkets": {
+          "types": [
+            "spot"
+          ]
+        }
+      }
+    },
+    "pair_whitelist": [
+      "ETH/USDT",
+      "BTC/USDT",
+      "SOL/USDT",
+      "BNB/USDT",
+      "XRP/USDT",
+      "TRX/USDT",
+      "ADA/USDT",
+      "XLM/USDT",
+      "DOGE/USDT",
+      "NEAR/USDT",
+      "LTC/USDT",
+      "SUI/USDT",
+      "BCH/USDT",
+      "AVAX/USDT",
+      "LINK/USDT",
+      "UNI/USDT",
+      "FIL/USDT",
+      "ICP/USDT",
+      "DOT/USDT",
+      "APT/USDT"
+    ],
+    "pair_blacklist": [
+      ".*(BULL|BEAR|UP|DOWN|3L|3S|5L|5S)/.*",
+      ".*(USDC|BUSD|TUSD|FDUSD|DAI|PAX|USD)/USDT"
+    ],
+    "password": "",
+    "enable_ws": false
+  },
+  "pairlists": [
+    {
+      "method": "StaticPairList"
+    }
+  ],
+  "telegram": {
+    "enabled": false,
+    "token": "",
+    "chat_id": ""
+  },
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "127.0.0.1",
+    "listen_port": 8080,
+    "verbosity": "error",
+    "enable_openapi": false,
+    "jwt_secret_key": "",
+    "ws_token": "",
+    "CORS_origins": [],
+    "username": "",
+    "password": ""
+  },
+  "internals": {
+    "process_throttle_secs": 5
+  }
+}

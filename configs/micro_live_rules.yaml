@@ -1,0 +1,41 @@
+version: 1
+status_model:
+  allowed_statuses:
+    - BLOCKED
+    - TESTNET_ALLOWED
+    - MANUAL_MICRO_LIVE_ALLOWED
+    - AUTO_MICRO_LIVE_ALLOWED
+hard_requirements:
+  safety:
+    dry_run_current_runtime: true
+    trading_mode: spot
+    margin_mode: ""
+    can_short: false
+    exchange_credentials_empty: true
+    api_listen_ip_address: 127.0.0.1
+  pre_live_gate_v3:
+    must_pass_for_micro_live: true
+  shadow_forward_evidence:
+    min_observation_days: 14
+    preferred_observation_days: 28
+    min_forward_closed_trades: 20
+    min_consistency_rate: 0.95
+    net_forward_filter_value_must_be_positive: true
+    wrong_block_winner_must_not_exceed_correct_block_loser: true
+  decision_engine:
+    historical_v2_net_filter_value_must_be_positive_for_auto_live: true
+    max_allowed_overfit_risk: false
+  emergency_stop:
+    stop_scripts_must_exist: true
+    status_scripts_must_exist: true
+    emergency_check_must_pass: true
+micro_live_caps:
+  manual_micro_live_max_stake_usdt: 10
+  auto_micro_live_max_stake_usdt: 5
+  max_open_trades: 1
+  leverage: 1
+  futures_allowed: false
+  margin_allowed: false
+  short_allowed: false
+decision_policy:
+  current_project_policy: "Because pre-live gate v3 is blocked and forward evidence is insufficient, real micro-live remains BLOCKED."

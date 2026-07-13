@@ -1,0 +1,29 @@
+statuses:
+  blocked: BLOCKED
+  testnet_allowed: TESTNET_ALLOWED
+  manual_micro_live_allowed: MANUAL_MICRO_LIVE_ALLOWED
+  auto_micro_live_allowed: AUTO_MICRO_LIVE_ALLOWED
+
+policy:
+  auto_micro_live_allowed: AUTO_MICRO_LIVE_BLOCKED_BY_POLICY
+  default_status: BLOCKED
+  max_allowed_now: TESTNET_ALLOWED
+
+testnet_required:
+  - runtime_safe
+  - testnet_endpoint_audit_pass
+  - testnet_config_isolated
+  - no_real_keys_on_disk
+  - no_futures_margin_short_leverage
+  - emergency_stop_pass
+
+manual_micro_live_required:
+  shadow_observation_days: 14
+  forward_closed_trades: 20
+  shadow_consistency_min: 0.95
+  forward_net_filter_value_min: 0
+  max_open_trades_max: 1
+  daily_max_trades_max: 2
+  require_manual_approval_file: true
+  require_user_approval_file: true
+

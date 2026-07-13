@@ -1,0 +1,45 @@
+{
+  "status_flow": [
+    "proposed",
+    "ready_for_backtest",
+    "backtested",
+    "rejected",
+    "promoted_to_shadow",
+    "shadow_testing",
+    "passed_shadow",
+    "failed_shadow"
+  ],
+  "allowed_module_targets": [
+    "NFI tag filter",
+    "Decision Engine",
+    "Sizing Only",
+    "Market State",
+    "Pairlist",
+    "Protections",
+    "Exit Logic",
+    "Stoploss",
+    "Trailing",
+    "Cooldown",
+    "Data Quality",
+    "Ops"
+  ],
+  "gate_requirements": [
+    "no strategy core modification",
+    "backtest 365d or mark LOW_SAMPLE",
+    "walk-forward split required",
+    "slippage stress required",
+    "anti-overfit check required",
+    "shadow validation required before promotion",
+    "Gatekeeper must not object",
+    "micro-live remains blocked"
+  ],
+  "promotion_blockers": [
+    "overfit_risk=HIGH",
+    "net_filter_value<0",
+    "slippage_after_profit<baseline",
+    "sample_size<50 and not LOW_SAMPLE_SHADOW_ONLY",
+    "secret_scan_not_pass",
+    "audit_verify_not_pass",
+    "gatekeeper_not_testnet_allowed"
+  ]
+}

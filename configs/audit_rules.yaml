@@ -1,0 +1,19 @@
+redaction:
+  terms:
+    - api_key
+    - secret
+    - password
+    - token
+    - signature
+    - private_key
+    - BINANCE_TESTNET_KEY
+    - BINANCE_TESTNET_SECRET
+
+hash_chain:
+  algorithm: sha256
+  initial_previous_event_hash: GENESIS
+
+failure_policy:
+  audit_write_failure: BLOCKED
+  verification_failure: BLOCKED
+

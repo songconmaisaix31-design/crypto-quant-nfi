@@ -1,0 +1,9 @@
+.env*
+!.env.template
+user_data/
+reports/
+market_intelligence/
+backups/
+__pycache__/
+*.pyc
+.DS_Store
