@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "assets": ["BTC", "ETH", "SOL", "XRP", "ADA"],
+  "global_weights": {
+    "trend_and_breadth": 0.25,
+    "spot_flow_and_liquidity": 0.20,
+    "social_sentiment": 0.15,
+    "news_sentiment": 0.10,
+    "onchain": 0.10,
+    "macro_liquidity": 0.10,
+    "derivatives_risk": 0.10
+  },
+  "confidence": {
+    "required_public_sources": ["binance_spot_market_data", "alternative_fear_greed", "coinmetrics_community"],
+    "minimum_for_shadow": 0.70,
+    "freshness_weight": 0.30,
+    "coverage_weight": 0.30,
+    "point_in_time_weight": 0.20,
+    "quality_weight": 0.20
+  },
+  "hard_block": {
+    "allowed_reasons": ["critical_event", "critical_data_failure", "critical_liquidity_failure"],
+    "critical_event_risk_min": 90,
+    "critical_liquidity_stress_min": 95,
+    "critical_data_confidence_max": 0.10
+  },
+  "sizing_levels": [1.0, 0.75, 0.5, 0.25, 0.0],
+  "promotion": {
+    "profit_after_slippage_at_least_baseline": true,
+    "max_drawdown_at_most_baseline": true,
+    "min_net_filter_value": 0.0,
+    "overfit_risk_forbidden": "HIGH",
+    "lookahead_analysis_required": true,
+    "point_in_time_audit_required": true,
+    "minimum_provider_uptime": 0.95
+  }
+}

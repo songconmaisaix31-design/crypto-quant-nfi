@@ -1,0 +1,33 @@
+{
+  "template_name": "micro_live_readiness_template_blocked_by_default",
+  "template_warning": "Template only. Real micro-live is forbidden until every gate passes and manual approval exists.",
+  "dry_run": true,
+  "trading_mode": "spot",
+  "margin_mode": "",
+  "can_short": false,
+  "max_open_trades": 1,
+  "stake_amount": 10,
+  "tradable_balance_ratio": 0.05,
+  "exchange": {
+    "name": "binance",
+    "key": "",
+    "secret": "",
+    "password": "",
+    "pair_whitelist": [
+      "BTC/USDT",
+      "ETH/USDT"
+    ],
+    "pair_blacklist": []
+  },
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "127.0.0.1",
+    "listen_port": 8080
+  },
+  "hard_limits": {
+    "daily_loss_stop_pct": 0.5,
+    "max_position_usdt": 10,
+    "manual_review_required": true,
+    "auto_live_forbidden_until_gate_passes": true
+  }
+}

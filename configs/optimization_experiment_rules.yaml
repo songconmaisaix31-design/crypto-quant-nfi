@@ -1,0 +1,45 @@
+{
+  "default_mode": "plan_only",
+  "experiment_types": [
+    "Decision Engine threshold experiment",
+    "Sizing-only experiment",
+    "Pairlist quality experiment",
+    "Protection experiment",
+    "Exit rule experiment",
+    "Stoploss / trailing experiment",
+    "Market regime filter experiment",
+    "Tag regime filter experiment",
+    "Slippage stress experiment",
+    "Robustness experiment"
+  ],
+  "required_sections": [
+    "baseline",
+    "candidate",
+    "train_test_split",
+    "walk_forward_split",
+    "fees",
+    "slippage_stress",
+    "market_regime_breakdown",
+    "pair_breakdown",
+    "enter_tag_breakdown",
+    "max_drawdown",
+    "max_consecutive_losses",
+    "profit_factor",
+    "net_filter_value",
+    "missed_profit",
+    "avoided_loss",
+    "sample_size_warning"
+  ],
+  "default_fees": {
+    "spot_fee_ratio_per_side": 0.001,
+    "slippage_ratio_per_side_base": 0.0005,
+    "slippage_ratio_per_side_stress": [0.001, 0.002, 0.005]
+  },
+  "minimum_evidence": {
+    "historical_days": 365,
+    "min_trades_target": 50,
+    "walkforward_windows": 3,
+    "shadow_days": 14,
+    "forward_closed_trades": 20
+  }
+}

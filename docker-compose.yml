@@ -1,0 +1,23 @@
+---
+services:
+  freqtrade:
+    image: freqtradeorg/freqtrade:stable
+    restart: unless-stopped
+    container_name: crypto-quant-nfi-freqtrade
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - "./user_data:/freqtrade/user_data"
+      - "./vendor/NostalgiaForInfinity:/freqtrade/user_data/strategies/nfi:ro"
+      - "./vendor/NostalgiaForInfinity/configs:/freqtrade/configs:ro"
+    ports:
+      - "127.0.0.1:${FREQTRADE__API_SERVER__LISTEN_PORT:-8080}:8080"
+    command: >
+      trade
+      --logfile /freqtrade/user_data/logs/freqtrade.log
+      --db-url sqlite:////freqtrade/user_data/tradesv3.sqlite
+      --config /freqtrade/user_data/config.json
+      --strategy ${FREQTRADE__STRATEGY:-NostalgiaForInfinityX7}
+      --strategy-path /freqtrade/user_data/strategies/nfi
+
